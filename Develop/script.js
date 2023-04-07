@@ -51,6 +51,6 @@ $(function () {
     }
   }
 
-  // TODO: Displays current date in the header using Day, Month Year format. (ex. Monday, April, 1st) This is done using Dayjs Advanced Format
+  // Displays current date in the header using Day, Month Year format. (ex. Monday, April, 1st) This is done using Dayjs Advanced Format
   $("#currentDay").text(dayjs().format("dddd, MMMM, Do"));
 });

@@ -34,11 +34,22 @@ $(function () {
     localStorage.setItem("Calendar", JSON.stringify(userStorage));
   });
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+  //  Loops through he Time-Block ID's and sets past, present or future classes depending on the ID number
+  for (let i = 9; i <= 17; i++)
+  {
+    if (dayjs().format("HH") > i)
+    {
+      $("#hour-" + i).addClass("past");
+    }
+    else if (dayjs().format("HH") == i)
+    {
+      $("#hour-" + i).addClass("present");
+    }
+    else
+    {
+      $("#hour-" + i).addClass("future");
+    }
+  }
 
   // TODO: Displays current date in the header using Day, Month Year format. (ex. Monday, April, 1st) This is done using Dayjs Advanced Format
   $("#currentDay").text(dayjs().format("dddd, MMMM, Do"));
